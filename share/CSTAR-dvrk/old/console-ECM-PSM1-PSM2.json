@@ -1,0 +1,29 @@
+
+{
+	"arms":
+    [
+        {
+            "name": "PSM1",
+            "type": "PSM",
+            "io": "sawRobotIO1394-PSM1-foot-pedal-26614.xml",
+            "pid": "../sawControllersPID-PSM.xml",
+            "kinematic": "../psm-large-needle-driver.json"
+        }
+        ,
+        {
+            "name": "PSM2",
+            "type": "PSM",
+            "io": "sawRobotIO1394-PSM2-12176.xml",
+            "pid": "../sawControllersPID-PSM.xml",
+            "kinematic": "../psm-large-needle-driver.json"
+        }
+        ,
+        {
+            "name": "ECM",
+            "type": "ECM",
+            "io": "sawRobotIO1394-ECM-34180.xml",
+            "pid": "../sawControllersPID-ECM.xml",
+            "kinematic": "../ecm-straight.json"
+        }
+    ]
+}

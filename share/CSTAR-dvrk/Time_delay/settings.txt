@@ -1,0 +1,3 @@
+0
+
+Time delay in milliseconds, make sure the number is the first thing in the file, it is read and loaded into a variable using fstream. 

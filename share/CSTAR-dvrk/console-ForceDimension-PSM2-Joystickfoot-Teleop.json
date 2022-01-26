@@ -1,0 +1,75 @@
+/* -*- Mode: Javascript; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+{
+    "component-manager": {
+        "components":
+        [
+            {
+                "shared-library": "sawForceDimensionSDK",
+                "class-name": "mtsForceDimension",
+                "constructor-arg": {
+                    "Name": "ForceDimensionSDK"
+                },
+                "configure-parameter": "sawForceDimensionSDK-MTMR.json"
+            }
+            ,
+            {
+                "shared-library": "sawJoystick",
+                "class-name": "mtsJoystick",
+                "constructor-arg": {
+                    "Name": "joystick"
+                },
+                "configure-parameter": "misc/sawJoystickConfiguration.json"
+            }
+        ]
+    }
+    ,
+    "console-inputs":
+    {
+        "operator-present": {
+            "component": "joystick",
+            "interface": "OperatorPresent"
+        }
+        ,
+        "clutch": {
+            "component": "joystick",
+            "interface": "Clutch"
+        }
+        ,
+        "camera": {
+            "component": "joystick",
+            "interface": "Camera"
+        }
+    }
+    ,
+    "arms":
+    [
+        {
+            "name": "PSM2",
+            "type": "PSM",
+            "serial": "12176"
+        }
+        ,
+        {
+            "name": "MTMR",  // created previously using custom components
+            "type": "MTM_GENERIC",
+            "component": "ForceDimensionSDK",
+            "interface": "MTMR"
+        }
+    ]
+    ,
+    "psm-teleops":
+    [
+        {
+            // this is where we tell the console to use our manually
+            // loaded teleop, using
+            "mtm": "MTMR",
+            "psm": "PSM2",
+            "configure-parameter": {
+                "scale": 0.2,
+                "rotation" : [[ -1.0000, 0.0000,  0.0000],
+                              [ 0.0000,  -1.0000,  0.0000],
+                              [ 0.0000,  0.0000,  1.0000]]
+            }
+        }
+    ]
+}

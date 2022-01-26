@@ -1,0 +1,74 @@
+/* -*- Mode: Javascript; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+{
+    "operator-present": {
+        "component": "io",
+        "interface": "COAG"
+    }
+    ,
+    "arms":
+    [
+        {
+            "name": "ECM",
+            "type": "ECM",
+            "io": "sawRobotIO1394-ECM-34180.xml",
+            "pid": "../sawControllersPID-ECM.xml",
+            "kinematic": "../ecm-straight.json"
+        }
+        ,
+        {
+            "name": "PSM1",
+            "type": "PSM",
+            "io": "sawRobotIO1394-PSM1-26614.xml",
+            "pid": "../sawControllersPID-PSM.xml",
+            "kinematic": "../psm-large-needle-driver.json"
+        }
+        ,
+	{
+            "name": "PSM2",
+            "type": "PSM",
+            "io": "sawRobotIO1394-PSM2-12176.xml",
+            "pid": "../sawControllersPID-PSM.xml",
+            "kinematic": "../psm-large-needle-driver.json"
+        }
+        ,
+        {
+            "name": "MTMR",
+            "type": "MTM",
+            "io": "sawRobotIO1394-MTMR-55479.xml",
+            "pid": "../sawControllersPID-MTMR.xml",
+            "kinematic": "../mtm.json"
+        }
+        ,
+        {
+            "name": "MTML",
+            "type": "MTM",
+            "io": "sawRobotIO1394-MTML-foot-pedal-24150.xml",
+            "pid": "../sawControllersPID-MTML.xml",
+            "kinematic": "../mtm.json"
+        }
+    ]
+    ,
+    "psm-teleops":
+    [
+        {
+            "master": "MTML",
+            "slave": "PSM1",
+            "period": 0.005, // in seconds
+   
+            "rotation" :[[-0.593905600176048,  -0.307097540332229,  -0.743617669774881],
+                        [0.529746867467397,  -0.844906937166624,  -0.074165517163940],
+                        [-0.605511679893963,  -0.437976447140265,   0.664478921608791]]
+        }
+	,
+	
+{
+            "master": "MTMR",
+            "slave": "PSM2",
+            "period": 0.005, // in seconds
+            "rotation" :[[-0.631630197277624,   0.425589538408424,   0.648009906316511],
+                         [ -0.562700375833865,  -0.826642172586286,  -0.005568261690187],
+                         [ 0.533302522892453,  -0.368152500058235,   0.761611551762061]]
+        }
+
+    ]
+}

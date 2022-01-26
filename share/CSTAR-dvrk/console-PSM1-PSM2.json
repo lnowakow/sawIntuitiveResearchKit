@@ -1,0 +1,33 @@
+/* -*- Mode: Javascript; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+{
+    "io": {
+        "period": 0.0005, // in seconds
+        "port": 0 // default is 0
+    }
+    ,
+    "operator-present": {
+        "component": "io",
+        "interface": "COAG"
+    }
+    ,
+    "arms":
+    [
+        {
+            "name": "PSM1",
+            "type": "PSM",
+            "io": "sawRobotIO1394-PSM1-foot-pedal-26614.xml",
+            "pid": "../sawControllersPID-PSM.xml",
+            "kinematic": "../psm-large-needle-driver.json"
+        }
+        ,
+
+        {
+            "name": "PSM2",
+            "type": "PSM",
+            "io": "sawRobotIO1394-PSM2-12176.xml",
+            "pid": "../sawControllersPID-PSM.xml",
+            "kinematic": "../psm-large-needle-driver.json"
+        }
+    ]
+}
+

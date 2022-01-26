@@ -4,13 +4,19 @@
         {
             "type": "interface-provided-button",
 	    "index-input": 1,
-            "interface-name": "OperatorPresent"
+            "interface-name": "Camera"
+        }
+	,
+	{
+            "type": "interface-provided-button",
+	    "index-input": 0,
+            "interface-name": "Clutch"
         }
 	,
         {
             "type": "interface-provided-button",
-	    "index-input": 0,
-            "interface-name": "Clutch"
+	    "index-input": 2,
+            "interface-name": "OperatorPresent"
         }
     ]
     ,
