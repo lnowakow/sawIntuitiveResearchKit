@@ -3,3 +3,5 @@ cisstLog.txt
 **/cisstLog*.txt
 *~
 CMakeLists.txt.user
+.idea
+cmake-build-debug
